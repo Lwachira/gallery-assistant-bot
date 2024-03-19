@@ -17,8 +17,8 @@ const composer = new Composer<Context>();
 
 const feature = composer.chatType("private");
 
-feature.command("aitest", logHandle("command-start"), async (ctx) => {
-  return ctx.reply(ctx.t("AI text goes here"));
+feature.command("aitest", logHandle("command-ai-test"), async (ctx) => {
+  return ctx.reply("AI text goes here");
 });
 
 export { composer as aiTestFeature };
