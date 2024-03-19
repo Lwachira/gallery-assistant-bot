@@ -18,7 +18,7 @@ const feature = composer.chatType("private");
 
 feature.command("aitest", logHandle("command-start"), async (ctx) => {
   const response =
-    chatCompletion.choices.at(0)?.message.content ??
+    chatCompletion.choices.at(0)?.message.content?.toString() ??
     "Default response if undefined or null";
   return ctx.reply(ctx.t(response));
 });
