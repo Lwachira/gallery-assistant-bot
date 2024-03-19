@@ -28,9 +28,13 @@ feature.on("message:photo", logHandle("on-ai-photo-input"), async (ctx) => {
   });
 });
 
-feature.command("save_to_db", logHandle("command-save_to_db"), async (ctx) => {
-  return ctx.reply("Saved to DB");
-});
+feature.callbackQuery(
+  "save_to_db",
+  logHandle("command-save_to_db"),
+  async (ctx) => {
+    return ctx.answerCallbackQuery({ text: "Saved to db" });
+  },
+);
 
 export { composer as aiTestFeature };
 
