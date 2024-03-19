@@ -22,3 +22,5 @@ feature.command("aitest", logHandle("command-start"), async (ctx) => {
     "Default response if undefined or null";
   return ctx.reply(ctx.t(response));
 });
+
+export { composer as aiTestFeature };
