@@ -24,6 +24,7 @@ const createConfigFromEnvironment = (environment: NodeJS.ProcessEnv) => {
       .array(z.enum(API_CONSTANTS.ALL_UPDATE_TYPES))
       .default([]),
     BOT_ADMINS: z.array(z.number()).default([]),
+    OPENAI_API_KEY: z.string(),
   });
 
   if (config.BOT_MODE === "webhook") {
