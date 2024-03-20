@@ -18,7 +18,7 @@ function getPrivateChatCommands(localeCode: string): BotCommand[] {
       description: i18n.t(localeCode, "start_command.description"),
     },
     {
-      command: "post image",
+      command: "image",
       description: "Post an image",
     },
   ];
