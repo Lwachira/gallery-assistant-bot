@@ -10,4 +10,8 @@ feature.command("start", logHandle("command-start"), (ctx) => {
   return ctx.reply(ctx.t("welcome"));
 });
 
+feature.command("image", logHandle("command-image"), (ctx) => {
+  return ctx.reply(ctx.t("image"));
+});
+
 export { composer as welcomeFeature };
