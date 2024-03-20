@@ -23,6 +23,12 @@ feature.command("aitest", logHandle("command-ai-test"), async (ctx) => {
 });
 
 feature.on("message:photo", logHandle("on-ai-photo-input"), async (ctx) => {
+  const pic = ctx.msg.photo[0];
+  const fileId = pic.file_id;
+  await ctx.reply(`The file identifier of your photo message is: ${fileId}`);
+  const file = await ctx.getFile(); // valid for at least 1 hour
+  const path = file.file_path; // file path on Bot API server
+  await ctx.reply(`Download your own file again: ${path}`);
   await ctx.reply("What would you like to do with the photo", {
     reply_markup: await createDefaultKeyboard(ctx),
   });

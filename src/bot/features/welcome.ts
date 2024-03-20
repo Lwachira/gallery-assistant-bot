@@ -11,7 +11,7 @@ feature.command("start", logHandle("command-start"), (ctx) => {
 });
 
 feature.command("image", logHandle("command-image"), (ctx) => {
-  return ctx.reply("image");
+  return ctx.reply("Post an image");
 });
 
 export { composer as welcomeFeature };
